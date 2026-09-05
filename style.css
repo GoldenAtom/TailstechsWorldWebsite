@@ -1,0 +1,151 @@
+:root {
+    color-scheme: dark;
+    font-family: Inter, system-ui, sans-serif;
+    background: #0b0f14;
+    color: #e8edf2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top, rgba(52, 84, 120, 0.18), transparent 35%),
+        #0b0f14;
+}
+
+.page {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.hero {
+    padding: 70px 0 90px;
+}
+
+.eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    opacity: 0.65;
+}
+
+h1 {
+    margin: 10px 0 20px;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.95;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.lead {
+    max-width: 760px;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #b8c1cc;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.primary {
+    background: #e8edf2;
+    color: #0b0f14;
+}
+
+.secondary {
+    border: 1px solid #33404d;
+    color: #e8edf2;
+}
+
+.panel,
+.card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+}
+
+.panel {
+    padding: 34px;
+    margin: 28px 0;
+}
+
+.panel p,
+.card p,
+.steps {
+    color: #b8c1cc;
+    line-height: 1.7;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 28px 0;
+}
+
+.card {
+    padding: 26px;
+}
+
+.steps {
+    padding-left: 22px;
+    margin-bottom: 28px;
+}
+
+.small {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+footer {
+    padding: 30px 20px 50px;
+    text-align: center;
+    color: #75808c;
+}
+
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        width: min(100% - 24px, 1100px);
+        padding-top: 30px;
+    }
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .panel {
+        padding: 24px;
+    }
+}
