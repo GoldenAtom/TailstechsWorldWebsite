@@ -6,76 +6,81 @@
     <meta name="description" content="Tailstech's World — a heavily modded Minecraft world built around exploration, engineering and enormous landscapes.">
     <title>Tailstech's World</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/favicon.ico">
 </head>
 <body>
     <main class="page">
-        <section class="hero">
-            <p class="eyebrow">MINECRAFT 1.21.1 · NEOFORGE</p>
-            <h1>Tailstech's World</h1>
-            <p class="lead">
-                A heavily modded world built around exploration, engineering,
-                long-distance travel and enormous landscapes.
-            </p>
+        <h1 class="title">Tailstech's World</h1>
+        <br>
 
-            <div class="actions">
-                <a class="button primary" href="/downloads/TailstechsWorld.zip">Download the modpack</a>
-                <a class="button secondary" href="#install">Installation</a>
-            </div>
-        </section>
+        <span class="download-shadow">
+        <a class="download-button" href="/downloads/TailstechsWorld.zip">
+            <img
+                class="download-image"
+                src="/images/DownloadButton.png"
+                alt=""
+            >
+            <span class="download-fallback">Download Modpack</span>
+        </a>
+        </span>
 
-        <section class="panel">
-            <h2>Built for one persistent world</h2>
-            <p>
-                Tailstech's World is designed around a long-running multiplayer world where distance matters.
-                Build railways, roads and other infrastructure, explore vast terrain, and solve problems using
-                the systems available to you rather than simply skipping them with cheap fast travel.
-            </p>
-        </section>
+   
 
-        <section class="grid">
-            <article class="card">
-                <h3>Huge landscapes</h3>
-                <p>
-                    Distant Horizons is built into the experience so mountains, coastlines and distant terrain
-                    remain part of the world instead of disappearing a few chunks away.
-                </p>
-            </article>
 
-            <article class="card">
-                <h3>Engineering & transport</h3>
-                <p>
-                    Trains, aircraft, boats, roads and other systems make getting somewhere part of the adventure.
-                </p>
-            </article>
+    <br>
+    <br>
+    <br>
+    <br>
 
-            <article class="card">
-                <h3>Exploration with purpose</h3>
-                <p>
-                    Progression encourages expeditions into increasingly dangerous and unusual environments
-                    without turning every encounter into a mandatory boss gate.
-                </p>
-            </article>
-        </section>
 
-        <section class="panel" id="install">
-            <p class="eyebrow">INSTALLATION</p>
-            <h2>Get into the world</h2>
+    <h2 class="text-overlay">How to install 
+        <br> <span class="small-line">You will need: Curseforge, minecraft and to download the zip above,</span>
 
-            <ol class="steps">
-                <li>Install the CurseForge launcher.</li>
-                <li>Download the Tailstech's World profile.</li>
-                <li>In CurseForge, choose <strong>Import</strong> and select the downloaded ZIP.</li>
-                <li>Launch the imported profile.</li>
-                <li>Open Multiplayer. The Tailstech's World server is already included.</li>
-            </ol>
 
-            <a class="button primary" href="/downloads/TailstechsWorld.zip">Download Tailstech's World</a>
-            <p class="small">Do not extract the ZIP before importing it into CurseForge.</p>
-        </section>
-    </main>
 
+    </h2>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+ </main>
     <footer>
-        <p>Tailstech's World</p>
+        <p>Tailstech's World by Tailstechnology</p>
     </footer>
 </body>
+
+<script>
+const button = document.querySelector('.download-button');
+const image = button.querySelector('.download-image');
+const fallback = button.querySelector('.download-fallback');
+
+const normal = '/images/DownloadButton.png';
+const hover = '/images/DownloadButtonHover.png';
+const pressed = '/images/DownloadButtonClick.png';
+
+button.addEventListener('mouseenter', () => {
+    image.src = hover;
+});
+
+button.addEventListener('mouseleave', () => {
+    image.src = normal;
+});
+
+button.addEventListener('mousedown', () => {
+    image.src = pressed;
+});
+
+button.addEventListener('mouseup', () => {
+    image.src = hover;
+});
+
+image.addEventListener('error', () => {
+    image.style.display = 'none';
+    fallback.style.display = 'inline-block';
+});
+</script>
+
 </html>
