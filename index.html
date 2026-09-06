@@ -1,86 +1,399 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tailstech's World — a heavily modded Minecraft world built around exploration, engineering and enormous landscapes.">
+
+    <meta
+        name="description"
+        content="Tailstech's World — a heavily modded Minecraft world built around exploration, engineering and enormous landscapes."
+    >
+
     <title>Tailstech's World</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/favicon.ico">
 </head>
+
+
 <body>
-    <main class="page">
-        <h1 class="title">Tailstech's World</h1>
-        <br>
 
-        <span class="download-shadow">
-        <a class="download-button" href="/downloads/TailstechsWorld.zip">
-            <img
-                class="download-image"
-                src="/images/DownloadButton.png"
-                alt=""
-            >
-            <span class="download-fallback">Download Modpack</span>
-        </a>
-        </span>
-
-   
+    <div class="site-background" aria-hidden="true"></div>
 
 
-    <br>
-    <br>
-    <br>
-    <br>
+    <main>
+
+        <section class="hero">
+
+            <h1 class="title">
+                Tailstech's World
+            </h1>
 
 
-    <h2 class="text-overlay">How to install 
-        <br> <span class="small-line">You will need: Curseforge, minecraft and to download the zip above,</span>
+            <div class="hero-buttons">
+
+                <span class="download-shadow">
+
+                    <a
+                        class="download-button"
+                        href="/downloads/TailstechsWorld.zip"
+                    >
+
+                        <img
+                            class="download-image"
+                            src="/images/DownloadButton.png"
+                            alt=""
+                            draggable="false"
+                        >
+
+                        <span class="download-fallback">
+                            Download Modpack
+                        </span>
+
+                    </a>
+
+                </span>
+
+
+                <a class="jump-button" href="#install">
+                    How to install
+                    <span class="jump-arrow">↓</span>
+                </a>
+
+            </div>
+
+        </section>
 
 
 
-    </h2>
+        <section class="tutorial-shell" id="install">
+
+            <div class="tutorial">
+
+                <header class="tutorial-header">
+
+                    <span class="tutorial-label">
+                        GETTING STARTED
+                    </span>
+
+                    <h2>
+                        How to install
+                    </h2>
+
+                    <p>
+                        You will need Minecraft, CurseForge and the
+                        Tailstech's World ZIP downloaded above.
+                    </p>
+
+                    <p class="tutorial-note">
+                        Do not extract the ZIP before importing it.
+                    </p>
+
+                </header>
 
 
-    <br>
-    <br>
-    <br>
-    <br>
 
- </main>
+                <div class="tutorial-steps">
+
+
+                    <article class="tutorial-step">
+
+                        <div class="tutorial-image-container">
+
+                            <img
+                                class="tutorial-image"
+                                src="/images/TutorialImage1.png"
+                                alt="CurseForge import button"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="tutorial-text">
+
+                            <span class="step-number">
+                                01
+                            </span>
+
+                            <div class="step-copy">
+
+                                <h3>
+                                    Open the import menu
+                                </h3>
+
+                                <p>
+                                    Open Minecraft in CurseForge and click
+                                    <strong>Import</strong>.
+                                </p>
+
+                                <p>
+                                    This opens CurseForge's profile import
+                                    system.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="tutorial-step">
+
+                        <div class="tutorial-image-container">
+
+                            <img
+                                class="tutorial-image"
+                                src="/images/TutorialImage2.png"
+                                alt="CurseForge ZIP import option"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="tutorial-text">
+
+                            <span class="step-number">
+                                02
+                            </span>
+
+                            <div class="step-copy">
+
+                                <h3>
+                                    Select the ZIP
+                                </h3>
+
+                                <p>
+                                    Choose the option to import a profile
+                                    from a <strong>ZIP file</strong>.
+                                </p>
+
+                                <p>
+                                    Select the Tailstech's World ZIP you
+                                    downloaded from this page.
+                                </p>
+
+                                <p>
+                                    Leave the ZIP intact. CurseForge will
+                                    unpack and configure it for you.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="tutorial-step">
+
+                        <div class="tutorial-image-container">
+
+                            <img
+                                class="tutorial-image"
+                                src="/images/TutorialImage3.png"
+                                alt="CurseForge external file warning"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="tutorial-text">
+
+                            <span class="step-number">
+                                03
+                            </span>
+
+                            <div class="step-copy">
+
+                                <h3>
+                                    Accept the warning
+                                </h3>
+
+                                <p>
+                                    CurseForge may warn that the profile
+                                    wasn't downloaded directly from
+                                    CurseForge.
+                                </p>
+
+                                <p>
+                                    This is expected because the pack is
+                                    downloaded directly from
+                                    <strong>tailstech.world</strong>.
+                                </p>
+
+                                <p>
+                                    Confirm the warning to continue.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="tutorial-step">
+
+                        <div class="tutorial-image-container">
+
+                            <img
+                                class="tutorial-image"
+                                src="/images/TutorialImage4.png"
+                                alt="Tailstech's World ready to play in CurseForge"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="tutorial-text">
+
+                            <span class="step-number">
+                                04
+                            </span>
+
+                            <div class="step-copy">
+
+                                <h3>
+                                    Play
+                                </h3>
+
+                                <p>
+                                    Wait for CurseForge to finish creating
+                                    the profile, then open Tailstech's World
+                                    and press <strong>Play</strong>.
+                                </p>
+
+                                <p>
+                                    The multiplayer server is already included,
+                                    so you can join directly from Minecraft's
+                                    Multiplayer menu.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
     <footer>
-        <p>Tailstech's World by Tailstechnology</p>
+
+        <p>
+            Tailstech's World by Tailstechnology
+        </p>
+
     </footer>
+
+
+
+    <script>
+
+        const button = document.querySelector('.download-button');
+        const image = button.querySelector('.download-image');
+        const fallback = button.querySelector('.download-fallback');
+
+        const normal = '/images/DownloadButton.png';
+        const hover = '/images/DownloadButtonHover.png';
+        const pressed = '/images/DownloadButtonClick.png';
+
+
+        button.addEventListener('mouseenter', () => {
+            image.src = hover;
+        });
+
+
+        button.addEventListener('mouseleave', () => {
+            image.src = normal;
+        });
+
+
+        button.addEventListener('mousedown', () => {
+            image.src = pressed;
+        });
+
+
+        button.addEventListener('mouseup', () => {
+            image.src = hover;
+        });
+
+
+        image.addEventListener('error', () => {
+            image.style.display = 'none';
+            fallback.style.display = 'inline-flex';
+        });
+
+
+
+        const tutorialShell =
+            document.querySelector('.tutorial-shell');
+
+
+        function updateTutorialParallax() {
+
+            const rect =
+                tutorialShell.getBoundingClientRect();
+
+            const viewportHeight =
+                window.innerHeight;
+
+            const progress =
+                (viewportHeight - rect.top)
+                /
+                (viewportHeight + rect.height);
+
+            const clamped =
+                Math.max(
+                    0,
+                    Math.min(1, progress)
+                );
+
+            const movement =
+                (clamped - 0.5) * 36;
+
+            tutorialShell.style.setProperty(
+                '--tutorial-parallax',
+                `${movement}px`
+            );
+
+        }
+
+
+        updateTutorialParallax();
+
+
+        window.addEventListener(
+            'scroll',
+            updateTutorialParallax,
+            { passive: true }
+        );
+
+
+        window.addEventListener(
+            'resize',
+            updateTutorialParallax
+        );
+
+    </script>
+
 </body>
-
-<script>
-const button = document.querySelector('.download-button');
-const image = button.querySelector('.download-image');
-const fallback = button.querySelector('.download-fallback');
-
-const normal = '/images/DownloadButton.png';
-const hover = '/images/DownloadButtonHover.png';
-const pressed = '/images/DownloadButtonClick.png';
-
-button.addEventListener('mouseenter', () => {
-    image.src = hover;
-});
-
-button.addEventListener('mouseleave', () => {
-    image.src = normal;
-});
-
-button.addEventListener('mousedown', () => {
-    image.src = pressed;
-});
-
-button.addEventListener('mouseup', () => {
-    image.src = hover;
-});
-
-image.addEventListener('error', () => {
-    image.style.display = 'none';
-    fallback.style.display = 'inline-block';
-});
-</script>
 
 </html>

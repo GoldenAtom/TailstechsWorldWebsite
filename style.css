@@ -1,107 +1,1022 @@
 :root {
+
     color-scheme: dark;
-    font-family: Inter, system-ui, sans-serif;
-    background: #0b0f14;
-    color: #e8edf2;
+
+    --tails-yellow: #FBCE04;
+    --tails-black: #141414;
+    --tails-dark: #090909;
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    color: #ffffff;
+
 }
+
 
 * {
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
+
     margin: 0;
-    background-image: url(/images/Landscape.png);
-    background-color: #ffe204;
+
+    min-height: 100vh;
+
+    background:
+        var(--tails-black);
+
+    overflow-x: hidden;
+
 }
 
-.page{
+
+
+/* ======================================== */
+/* FAR BACKGROUND                           */
+/* ======================================== */
+
+
+.site-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    background-image:
+        url("/images/Landscape.png");
+
+    background-size: cover;
+
+    background-position:
+        center top;
+
+    background-repeat:
+        no-repeat;
+
+    transform:
+        scale(1.02);
+
+}
+
+
+
+/* ======================================== */
+/* HERO                                     */
+/* ======================================== */
+
+
+.hero {
+
+    min-height:
+        max(760px, 100vh);
+
+    padding:
+        45px
+        20px
+        120px;
+
     text-align: center;
+
 }
 
-.title{
-    font-size: 7rem;
-    color: #ffe204;
-    -webkit-text-stroke: 1.8px rgba(0, 0, 0, 0.705);
+
+.title {
+
+    margin:
+        0
+        0
+        55px;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            7rem
+        );
+
+    line-height: 1;
+
+    color:
+        var(--tails-yellow);
+
+    -webkit-text-stroke:
+        1.8px
+        rgba(0, 0, 0, 0.75);
+
+    text-shadow:
+        0
+        4px
+        8px
+        rgba(0, 0, 0, 0.35);
+
 }
+
+
+
+/* ======================================== */
+/* HERO BUTTONS                             */
+/* ======================================== */
+
+
+.hero-buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
 
 .download-shadow {
+
     display: inline-block;
-    filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.35));
+
+    filter:
+        drop-shadow(
+            5px
+            6px
+            4px
+            rgba(0, 0, 0, 0.35)
+        );
+
 }
+
 
 .download-button {
+
     display: inline-block;
-    transition: transform 0.08s ease;
+
+    text-decoration: none;
+
+    transition:
+        transform
+        0.08s
+        ease;
+
 }
+
 
 .download-image {
+
     display: block;
-    width: 330px;
+
+    width:
+        min(
+            330px,
+            80vw
+        );
+
     height: auto;
+
+    user-select: none;
+
 }
 
-.text-overlay {
-    background: rgba(0, 0, 0, 0.35);
-    padding: 8px 12px;
-    border-radius: 8px;
-}
 
 .download-fallback {
+
     display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 300px;
+
+    min-height: 90px;
+
+    padding:
+        20px
+        30px;
+
+    background:
+        var(--tails-yellow);
+
+    border:
+        3px
+        solid
+        var(--tails-black);
+
+    border-radius: 14px;
+
+    color:
+        var(--tails-black);
+
+    font-size: 24px;
+
+    font-weight: 900;
+
 }
+
 
 .download-button:hover {
-    transform: translateY(-8px) rotate(1.5deg) scale(1.05);
+
+    transform:
+        translateY(-8px)
+        rotate(1.5deg)
+        scale(1.05);
+
 }
+
 
 .download-button:active {
-    transform: scale(0.98) translateY(1px);
+
+    transform:
+        scale(0.98)
+        translateY(1px);
+
 }
 
-.small-line {
-    font-size: 0.75em;
-}
 
 
-p{
-    font-size: 35px;
-    font-weight: 500;
-    color: #e8edf2;
-}
+/* ======================================== */
+/* INSTALL JUMP BUTTON                      */
+/* ======================================== */
 
-h2{
-    font-family: Bookman, URW Bookman L, serif;
+
+.jump-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        11px
+        19px;
+
+    border:
+        2px
+        solid
+        var(--tails-yellow);
+
+    border-radius: 999px;
+
+    background:
+        rgba(20, 20, 20, 0.82);
+
+    color:
+        var(--tails-yellow);
+
+    text-decoration: none;
+
+    font-size: 16px;
+
     font-weight: 800;
-    font-size: 30px;
+
+    box-shadow:
+        0
+        5px
+        15px
+        rgba(0, 0, 0, 0.3);
+
+    backdrop-filter:
+        blur(6px);
+
+    transition:
+        transform
+        0.12s
+        ease,
+        background
+        0.12s
+        ease;
+
 }
+
+
+.jump-button:hover {
+
+    background:
+        var(--tails-yellow);
+
+    color:
+        var(--tails-black);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.jump-arrow {
+
+    font-size: 20px;
+
+    line-height: 1;
+
+}
+
+
+
+/* ======================================== */
+/* TUTORIAL FOREGROUND                      */
+/* ======================================== */
+
+
+.tutorial-shell {
+    --tutorial-parallax: 0px;
+
+    position: relative;
+    z-index: 1;
+
+    isolation: isolate;
+    overflow: clip;
+
+    margin-top: -18vh;
+
+    padding:
+        45px
+        20px
+        130px;
+}
+
+
+/*
+
+This is the close/background layer.
+
+The landscape remains fixed behind everything,
+while this gradient moves slightly as you scroll.
+
+*/
+
+.tutorial-shell::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: -80px;
+    right: 0;
+    bottom: -80px;
+    left: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(251, 206, 4, 0.12),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 10% 65%,
+            rgba(251, 206, 4, 0.07),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(8, 8, 8, 0.985),
+            rgba(20, 20, 20, 0.985) 46%,
+            rgba(33, 29, 10, 0.98) 100%
+        );
+
+    border-top:
+        2px
+        solid
+        rgba(251, 206, 4, 0.7);
+
+    box-shadow:
+
+        0
+        -30px
+        70px
+        rgba(0, 0, 0, 0.65),
+
+        inset
+        0
+        30px
+        100px
+        rgba(251, 206, 4, 0.025);
+
+    transform:
+        translateY(
+            var(--tutorial-parallax)
+        );
+
+    will-change:
+        transform;
+
+}
+
+
+
+.tutorial {
+
+    width:
+        min(
+            1220px,
+            100%
+        );
+
+    margin:
+        0
+        auto;
+
+}
+
+
+
+/* ======================================== */
+/* TUTORIAL HEADER                          */
+/* ======================================== */
+
+
+.tutorial-header {
+
+    width:
+        min(
+            820px,
+            100%
+        );
+
+    margin:
+        0
+        auto
+        95px;
+
+    text-align: center;
+
+}
+
+
+.tutorial-label {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--tails-yellow);
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing:
+        0.18em;
+
+}
+
+
+.tutorial-header h2 {
+
+    margin:
+        0
+        0
+        18px;
+
+    color: #ffffff;
+
+    font-family:
+        Bookman,
+        "URW Bookman L",
+        serif;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4.5rem
+        );
+
+    line-height: 1;
+
+}
+
+
+.tutorial-header p {
+
+    margin:
+        8px
+        0;
+
+    color:
+        #eeeeee;
+
+    font-size:
+        20px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.tutorial-header
+.tutorial-note {
+
+    margin-top:
+        20px;
+
+    color:
+        var(--tails-yellow);
+
+    font-size:
+        17px;
+
+    font-weight:
+        700;
+
+}
+
+
+
+/* ======================================== */
+/* STEPS                                    */
+/* ======================================== */
+
+
+.tutorial-steps {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 90px;
+
+}
+
+
+.tutorial-step {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(300px, 0.6fr);
+
+    align-items: center;
+
+    gap: 55px;
+
+    padding:
+        36px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(18, 18, 18, 0.97),
+            rgba(8, 8, 8, 0.94)
+        );
+
+    border:
+        1px
+        solid
+        rgba(251, 206, 4, 0.26);
+
+    border-radius:
+        24px;
+
+    box-shadow:
+
+        0
+        20px
+        50px
+        rgba(0, 0, 0, 0.42),
+
+        inset
+        0
+        1px
+        rgba(255, 255, 255, 0.05);
+
+}
+
+
+
+/* alternate the layout */
+
+.tutorial-step:nth-child(even)
+.tutorial-image-container {
+
+    order: 2;
+
+}
+
+
+.tutorial-step:nth-child(even)
+.tutorial-text {
+
+    order: 1;
+
+}
+
+
+
+/* ======================================== */
+/* TUTORIAL SCREENSHOTS                     */
+/* ======================================== */
+
+
+.tutorial-image-container {
+
+    padding: 9px;
+
+    background:
+        #050505;
+
+    border:
+        1px
+        solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        0
+        10px
+        30px
+        rgba(0, 0, 0, 0.55);
+
+    overflow: hidden;
+
+}
+
+
+.tutorial-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    border-radius:
+        9px;
+
+}
+
+
+
+/* ======================================== */
+/* STEP TEXT                                */
+/* ======================================== */
+
+
+.tutorial-text {
+
+    display: flex;
+
+    align-items:
+        flex-start;
+
+    gap: 20px;
+
+}
+
+
+.step-number {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--tails-yellow);
+
+    color:
+        var(--tails-black);
+
+    font-size:
+        19px;
+
+    font-weight:
+        950;
+
+    box-shadow:
+        0
+        6px
+        16px
+        rgba(0, 0, 0, 0.35);
+
+}
+
+
+.step-copy {
+
+    min-width: 0;
+
+}
+
+
+.step-copy h3 {
+
+    margin:
+        4px
+        0
+        20px;
+
+    color: #ffffff;
+
+    font-family:
+        Bookman,
+        "URW Bookman L",
+        serif;
+
+    font-size:
+        31px;
+
+    line-height:
+        1.15;
+
+}
+
+
+.step-copy p {
+
+    margin:
+        0
+        0
+        16px;
+
+    color:
+        #d6d6d6;
+
+    font-size:
+        18px;
+
+    line-height:
+        1.65;
+
+}
+
+
+.step-copy p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.step-copy strong {
+
+    color:
+        var(--tails-yellow);
+
+}
+
+
+
+/* ======================================== */
+/* FOOTER                                   */
+/* ======================================== */
 
 
 footer {
-    padding: 30px 20px 50px;
-    text-align: center;
-    color: #000000;
+
+    position: relative;
+
+    padding:
+        35px
+        20px
+        55px;
+
+    background:
+        #090909;
+
+    text-align:
+        center;
+
 }
 
+
+footer p {
+
+    margin: 0;
+
+    color:
+        #9b9b9b;
+
+    font-size:
+        16px;
+
+}
+
+
+
+/* ======================================== */
+/* MOBILE                                   */
+/* ======================================== */
+
+
 @media (max-width: 800px) {
-    .grid {
-        grid-template-columns: 1fr;
+
+
+    .site-background {
+
+        background-position:
+            center top;
+
+        transform:
+            scale(1.08);
+
     }
 
-    .page {
-        width: min(100% - 24px, 1100px);
-        padding-top: 30px;
-    }
 
     .hero {
-        padding-top: 40px;
+
+        min-height:
+            680px;
+
+        padding-top:
+            30px;
+
     }
 
-    .panel {
-        padding: 24px;
+
+    .title {
+
+        margin-bottom:
+            45px;
+
+        font-size:
+            clamp(
+                3.4rem,
+                15vw,
+                6rem
+            );
+
     }
+
+
+    .tutorial-shell {
+
+        padding:
+            85px
+            12px
+            90px;
+
+    }
+
+
+    .tutorial-header {
+
+        margin-bottom:
+            55px;
+
+    }
+
+
+    .tutorial-header p {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .tutorial-steps {
+
+        gap:
+            45px;
+
+    }
+
+
+    .tutorial-step {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            24px;
+
+        padding:
+            15px;
+
+        border-radius:
+            18px;
+
+    }
+
+
+    .tutorial-step:nth-child(even)
+    .tutorial-image-container {
+
+        order: 1;
+
+    }
+
+
+    .tutorial-step:nth-child(even)
+    .tutorial-text {
+
+        order: 2;
+
+    }
+
+
+    .tutorial-text {
+
+        padding:
+            8px
+            6px
+            15px;
+
+        gap:
+            15px;
+
+    }
+
+
+    .step-number {
+
+        width:
+            48px;
+
+        height:
+            48px;
+
+        font-size:
+            16px;
+
+    }
+
+
+    .step-copy h3 {
+
+        margin-top: 2px;
+
+        font-size:
+            25px;
+
+    }
+
+
+    .step-copy p {
+
+        font-size:
+            16px;
+
+    }
+
+}
+
+
+
+/* ======================================== */
+/* REDUCED MOTION                           */
+/* ======================================== */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior:
+            auto;
+    }
+
+
+    .download-button,
+    .jump-button {
+
+        transition:
+            none;
+
+    }
+
+
+    .tutorial-shell::before {
+
+        transform:
+            none;
+
+    }
+
 }
