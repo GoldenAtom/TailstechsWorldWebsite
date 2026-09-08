@@ -33,27 +33,64 @@
 
             <div class="hero-buttons">
 
-                <span class="download-shadow">
+               <div class="download-options">
 
-                    <a
-                        class="download-button"
-                        href="/downloads/TailstechsWorld.zip"
-                    >
+                    <span class="download-shadow">
 
-                        <img
-                            class="download-image"
-                            src="/images/DownloadButton.png"
-                            alt=""
-                            draggable="false"
+                        <a
+                            class="download-button download-button-main"
+                            href="/downloads/TailstechsWorldV2.zip"
+                            data-normal="/images/DownloadButton.png"
+                            data-hover="/images/DownloadButtonHover.png"
+                            data-pressed="/images/DownloadButtonClick.png"
                         >
 
-                        <span class="download-fallback">
-                            Download Modpack
+                            <img
+                                class="download-image download-image-main"
+                                src="/images/DownloadButton.png"
+                                alt="Download Tailstech's World"
+                                draggable="false"
+                            >
+
+                            <span class="download-fallback">
+                                Download Modpack
+                            </span>
+
+                        </a>
+
+                    </span>
+
+
+                    <div class="small-download">
+
+                        <span class="download-shadow download-shadow-small">
+
+                            <a
+                                class="download-button download-button-small"
+                                href="/downloads/TailstechsWorldV2-small.zip"
+                                data-normal="/images/DownloadButtonSmall.png"
+                                data-hover="/images/DownloadButtonHoverSmall.png"
+                                data-pressed="/images/DownloadButtonClickSmall.png"
+                            >
+
+                                <img
+                                    class="download-image download-image-small"
+                                    src="/images/DownloadButtonSmall.png"
+                                    alt="Download Tailstech's World without Distant Horizons data"
+                                    draggable="false"
+                                >
+
+                                <span class="download-fallback download-fallback-small">
+                                    Smaller download
+                                </span>
+
+                            </a>
+
                         </span>
 
-                    </a>
+                    </div>
 
-                </span>
+                </div>
 
 
                 <a class="jump-button" href="#install">
@@ -307,90 +344,59 @@
 
     <script>
 
-        const button = document.querySelector('.download-button');
-        const image = button.querySelector('.download-image');
-        const fallback = button.querySelector('.download-fallback');
+       document.querySelectorAll('.download-button').forEach(button => {
 
-        const normal = '/images/DownloadButton.png';
-        const hover = '/images/DownloadButtonHover.png';
-        const pressed = '/images/DownloadButtonClick.png';
+            const image =
+                button.querySelector('.download-image');
+
+            const fallback =
+                button.querySelector('.download-fallback');
+
+            if (!image) {
+                return;
+            }
+
+            const normal =
+                button.dataset.normal || image.src;
+
+            const hover =
+                button.dataset.hover || normal;
+
+            const pressed =
+                button.dataset.pressed || hover;
 
 
-        button.addEventListener('mouseenter', () => {
-            image.src = hover;
+            button.addEventListener('pointerenter', () => {
+                image.src = hover;
+            });
+
+
+            button.addEventListener('pointerleave', () => {
+                image.src = normal;
+            });
+
+
+            button.addEventListener('pointerdown', () => {
+                image.src = pressed;
+            });
+
+
+            button.addEventListener('pointerup', () => {
+                image.src = hover;
+            });
+
+
+            button.addEventListener('pointercancel', () => {
+                image.src = normal;
+            });
+
+
+            image.addEventListener('error', () => {
+                image.style.display = 'none';
+                fallback.style.display = 'inline-flex';
+            });
+
         });
-
-
-        button.addEventListener('mouseleave', () => {
-            image.src = normal;
-        });
-
-
-        button.addEventListener('mousedown', () => {
-            image.src = pressed;
-        });
-
-
-        button.addEventListener('mouseup', () => {
-            image.src = hover;
-        });
-
-
-        image.addEventListener('error', () => {
-            image.style.display = 'none';
-            fallback.style.display = 'inline-flex';
-        });
-
-
-
-        const tutorialShell =
-            document.querySelector('.tutorial-shell');
-
-
-        function updateTutorialParallax() {
-
-            const rect =
-                tutorialShell.getBoundingClientRect();
-
-            const viewportHeight =
-                window.innerHeight;
-
-            const progress =
-                (viewportHeight - rect.top)
-                /
-                (viewportHeight + rect.height);
-
-            const clamped =
-                Math.max(
-                    0,
-                    Math.min(1, progress)
-                );
-
-            const movement =
-                (clamped - 0.5) * 36;
-
-            tutorialShell.style.setProperty(
-                '--tutorial-parallax',
-                `${movement}px`
-            );
-
-        }
-
-
-        updateTutorialParallax();
-
-
-        window.addEventListener(
-            'scroll',
-            updateTutorialParallax,
-            { passive: true }
-        );
-
-
-        window.addEventListener(
-            'resize',
-            updateTutorialParallax
-        );
 
     </script>
 

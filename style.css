@@ -144,10 +144,15 @@ body {
 
 
 
+.download-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
 .download-shadow {
-
     display: inline-block;
-
     filter:
         drop-shadow(
             5px
@@ -155,74 +160,93 @@ body {
             4px
             rgba(0, 0, 0, 0.35)
         );
-
 }
 
-
 .download-button {
-
     display: inline-block;
-
     text-decoration: none;
-
     transition:
         transform
         0.08s
         ease;
-
 }
 
-
 .download-image {
-
     display: block;
+    height: auto;
+    user-select: none;
+}
 
+.download-image-main {
     width:
         min(
             330px,
             80vw
         );
-
-    height: auto;
-
-    user-select: none;
-
 }
 
+.download-image-small {
+    width:
+        min(
+            250px,
+            68vw
+        );
+}
+
+.download-button-main:hover {
+    transform:
+        translateY(-8px)
+        rotate(1.5deg)
+        scale(1.05);
+}
+
+.download-button-small:hover {
+    transform:
+        translateY(-4px)
+        rotate(0.7deg)
+        scale(1.03);
+}
+
+.download-button:active {
+    transform:
+        scale(0.98)
+        translateY(1px);
+}
+
+.small-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.small-download-note {
+    color: #d0d0d0;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
+}
 
 .download-fallback {
-
     display: none;
-
     align-items: center;
-
     justify-content: center;
-
     min-width: 300px;
-
     min-height: 90px;
-
-    padding:
-        20px
-        30px;
-
-    background:
-        var(--tails-yellow);
-
-    border:
-        3px
-        solid
-        var(--tails-black);
-
+    padding: 20px 30px;
+    background: var(--tails-yellow);
+    border: 3px solid var(--tails-black);
     border-radius: 14px;
-
-    color:
-        var(--tails-black);
-
+    color: var(--tails-black);
     font-size: 24px;
-
     font-weight: 900;
+}
 
+.download-fallback-small {
+    min-width: 210px;
+    min-height: 58px;
+    padding: 12px 18px;
+    font-size: 16px;
 }
 
 
@@ -332,11 +356,8 @@ body {
 
 
 .tutorial-shell {
-    --tutorial-parallax: 0px;
-
     position: relative;
     z-index: 1;
-
     isolation: isolate;
     overflow: clip;
 
@@ -349,22 +370,11 @@ body {
 }
 
 
-/*
-
-This is the close/background layer.
-
-The landscape remains fixed behind everything,
-while this gradient moves slightly as you scroll.
-
-*/
-
 .tutorial-shell::before {
-
     content: "";
 
     position: absolute;
-
-    z-index: -1;
+    z-index: 0;
 
     top: -80px;
     right: 0;
@@ -372,24 +382,21 @@ while this gradient moves slightly as you scroll.
     left: 0;
 
     background:
-
         radial-gradient(
             circle at 80% 15%,
             rgba(251, 206, 4, 0.12),
             transparent 38%
         ),
-
         radial-gradient(
             circle at 10% 65%,
             rgba(251, 206, 4, 0.07),
             transparent 32%
         ),
-
         linear-gradient(
             145deg,
-            rgba(8, 8, 8, 0.985),
-            rgba(20, 20, 20, 0.985) 46%,
-            rgba(33, 29, 10, 0.98) 100%
+            #080808,
+            #141414 46%,
+            #211d0a 100%
         );
 
     border-top:
@@ -397,32 +404,12 @@ while this gradient moves slightly as you scroll.
         solid
         rgba(251, 206, 4, 0.7);
 
-    box-shadow:
-
-        0
-        -30px
-        70px
-        rgba(0, 0, 0, 0.65),
-
-        inset
-        0
-        30px
-        100px
-        rgba(251, 206, 4, 0.025);
-
-    transform:
-        translateY(
-            var(--tutorial-parallax)
-        );
-
-    will-change:
-        transform;
-
 }
 
 
-
 .tutorial {
+    position: relative;
+    z-index: 1;
 
     width:
         min(
@@ -433,8 +420,9 @@ while this gradient moves slightly as you scroll.
     margin:
         0
         auto;
-
 }
+
+
 
 
 
